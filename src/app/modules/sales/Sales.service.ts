@@ -66,8 +66,10 @@ const getAllSales = async (id: string, duration:string) => {
   return result;
 };
 
-const getMySales = async (id: string) => {
-  const result = await Sales.find({ buyer: id })
+const getMySales = async (id: string, duration:string) => {
+  const startDate = calculateStartDate(duration);
+  const endDate = new Date();
+  const result = await Sales.find({ buyer: id,  createdAt: { $gte: startDate, $lte: endDate } })
     .populate("buyer")
     .populate("product");
   return result;
