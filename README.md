@@ -50,6 +50,15 @@ Computer Items Management Api's:
     4. Yearly
 
 
+## Part Servicing:
+
+Integrated a section for part servicing within the dashboard.
+    1. Users, especially buyer, can request for the maintenance and servicing of a computer part. When making a servicing request, buyers need to provide:
+    2. Details of the part requiring servicing (e.g., serial number, model)
+    3. Description of the issue or service required
+    4. Preferred service date and time, if applicable
+
+
 ## Computer Items Filtering (Implement on the computer items management page)
 
 Implemented a comprehensive computer items filter system to optimize inventory management. The filter options should cater specifically to computer accessories and hardware:
