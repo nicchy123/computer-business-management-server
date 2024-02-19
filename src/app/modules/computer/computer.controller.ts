@@ -12,7 +12,8 @@ const createComputer = catchAsync(async (req, res) => {
         data: result
     })
 });
-    
+
+
 
 const getAllComputer = catchAsync(async (req, res) => {
     const result = await computerServices.getAllComputer(req?.query);
@@ -72,5 +73,5 @@ export const computerControllers = {
   updateComputer,
   deleteComputer,
   getSingleComputer,
-  bulkDelete
+  bulkDelete,
 };

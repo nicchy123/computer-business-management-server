@@ -19,6 +19,8 @@ const CreateComputerZodValidationSchema = z.object({
 })
 });
 
+
+
 const updateComputerZodValidationSchema = z.object({
   body: z.object({
     name: z.string().optional(),
@@ -36,7 +38,10 @@ const updateComputerZodValidationSchema = z.object({
   })
 });
 
+
+
+
 export const computerZodValidation = {
   CreateComputerZodValidationSchema,
-  updateComputerZodValidationSchema
+  updateComputerZodValidationSchema,
 };

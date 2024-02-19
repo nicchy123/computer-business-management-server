@@ -27,6 +27,7 @@ const getAllSales = catchAsync(async (req, res) => {
 });
 
 const getMySales = catchAsync(async (req, res) => {
+    console.log(req.params)
     const result = await SalesServices.getMySales(req?.params?.id, req?.params?.duration);
     sendResponse(res, {
         success: true,

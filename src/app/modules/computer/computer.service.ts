@@ -17,6 +17,7 @@ const createComputer = async (payload: IComputer) => {
   return result;
 };
 
+
 const getAllComputer = async (query: Record<string, unknown>) => {
   const computerQuery = new QueryBuilder(
     Computers.find({ quantity: { $gte: 1 } }).populate("seller"),
