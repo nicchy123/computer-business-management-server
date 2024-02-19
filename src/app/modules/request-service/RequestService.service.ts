@@ -1,3 +1,4 @@
+import { IRequestService } from "./RequestService.interface";
 import { ComputerServiceRequests } from "./RequestService.model";
 
 const createComputerServiceRequest = async (payload: IRequestService) => {
