@@ -15,7 +15,6 @@ const createComputerServiceRequest = async (payload: IRequestService) => {
 };
 
 const getComputerServiceRequests = async (id: string) => {
-  console.log(id)
   const result = await ComputerServiceRequests.find({ user: id });
   return result;
 };
