@@ -14,6 +14,19 @@ const createComputerServiceRequest = catchAsync(async (req, res) => {
   });
 });
 
+const getComputerServiceRequests = catchAsync(async (req, res) => {
+  const id = req.params.id;
+  const result =
+    await computerServiceRequestServices.getComputerServiceRequests(id);
+  sendResponse(res, {
+    success: true,
+    statusCode: 200,
+    message: "Computer Service Request Created Successfully",
+    data: result,
+  });
+});
+
 export const createComputerServiceRequestControllers = {
   createComputerServiceRequest,
+  getComputerServiceRequests
 };

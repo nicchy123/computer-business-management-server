@@ -1,8 +1,10 @@
 import { Schema, model } from "mongoose";
-import { IRequestService } from "./RequestService.interface";
+import { IRequestService, IRequestServiceModal } from "./RequestService.interface";
+import { User } from "../user/user.model";
 
-const computerSchema = new Schema<IRequestService>({
+const requestServiceSchema = new Schema<IRequestService>({
   name: { type: String, required: true },
+  sellerEmail: { type: String, required: true },
   user: { type: Schema.Types.ObjectId, ref: "User", required: true },
   details: { type: String, required: true },
   brand: { type: String, required: true },
@@ -11,10 +13,13 @@ const computerSchema = new Schema<IRequestService>({
 });
 
 
+requestServiceSchema.statics.isSellerExists = async function (email: string) {
+  return await User.findOne({ email, role:"seller" }).select('+password');
+};
 
 
-export const ComputerServiceRequests = model<IRequestService>(
+export const ComputerServiceRequests = model<IRequestService , IRequestServiceModal>(
   "ServiceRequests",
-  computerSchema
+  requestServiceSchema
 );
   

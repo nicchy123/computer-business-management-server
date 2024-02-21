@@ -8,5 +8,6 @@ const router = express.Router();
 
 
 router.post('/part-servicing', validateRequest(createServiceRequestZodValidationSchema.CreatePartServicingZodValidationSchema), createComputerServiceRequestControllers.createComputerServiceRequest);
+router.get('/service-requests/:id', createComputerServiceRequestControllers.getComputerServiceRequests);
 
 export const computerServiceRequestRoutes = router 
